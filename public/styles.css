@@ -20,7 +20,7 @@ body {
 .logo {
     display: block;
     margin: 0 auto 10px; /* Posisikan logo di tengah dan beri jarak */
-    max-width: 150px; /* Sesuaikan ukuran maksimal logo */
+    max-width: 500px; /* Sesuaikan ukuran maksimal logo */
     height: auto; /* Pertahankan rasio logo */
 }
 
