@@ -16,6 +16,14 @@ body {
     font-size: 16px;
 }
 
+/* Tambahkan styling untuk logo */
+.logo {
+    display: block;
+    margin: 0 auto 10px; /* Posisikan logo di tengah dan beri jarak */
+    max-width: 150px; /* Sesuaikan ukuran maksimal logo */
+    height: auto; /* Pertahankan rasio logo */
+}
+
 /* Header */
 header {
     background-color: #32cd32; /* Hijau lime cerah */
@@ -26,14 +34,15 @@ header {
 }
 
 header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 header p {
     font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 nav ul {
