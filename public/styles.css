@@ -41,6 +41,7 @@ nav ul {
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    flex-wrap: wrap; /* Responsif: memungkinkan ul bergulung */
 }
 
 nav ul li {
@@ -115,10 +116,26 @@ a:hover {
     color: #32cd32; /* Hijau lime saat hover */
 }
 
-/* Responsif */
-@media (max-width: 768px) {
+/* Responsif untuk Tablet */
+@media (max-width: 1024px) {
     header h1 {
         font-size: 2.5em;
+    }
+
+    section {
+        padding: 25px;
+        margin: 25px auto;
+    }
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
     }
 
     nav ul {
@@ -131,6 +148,31 @@ a:hover {
 
     section {
         padding: 20px;
-        margin: 20px 10px;
+        margin: 20px 15px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Responsif untuk Layar Kecil (Smartphone) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    section {
+        padding: 15px;
+        margin: 15px 10px;
+        box-shadow: none; /* Mengurangi shadow agar terlihat lebih bersih */
+    }
+
+    footer {
+        font-size: 0.9em;
     }
 }
