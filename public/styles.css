@@ -26,7 +26,7 @@ body {
 
 /* Header */
 header {
-    background-color: #32cd32; /* Hijau lime cerah */
+    background-color: lightyellow; /* Hijau lime cerah */
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -42,14 +42,14 @@ header h1 {
 }
 
 header .line-1 {
-    font-size: 2.5em;
-    color: #00A859; /* Warna hijau sesuai logo */
+    font-size: 1.5em;
+    color: #009b4c; /* Warna hijau sesuai logo */
     letter-spacing: 1px;
 }
 
 header .line-2 {
-    font-size: 1.5em;
-    color: #3f3f3f; /* Warna abu-abu muda */
+    font-size: 1em;
+    color: #1d1819; /* Warna abu-abu muda */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
