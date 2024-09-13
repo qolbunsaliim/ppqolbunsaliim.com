@@ -18,10 +18,11 @@ body {
 
 /* Tambahkan styling untuk logo */
 .logo {
+    width: 80%; /* Menggunakan persentase agar lebih fleksibel */
+    max-width: 400px; /* Sesuaikan ukuran maksimal logo */
+    height: auto; /* Pertahankan rasio logo */
     display: block;
     margin: 0 auto 10px; /* Posisikan logo di tengah dan beri jarak */
-    max-width: 500px; /* Sesuaikan ukuran maksimal logo */
-    height: auto; /* Pertahankan rasio logo */
 }
 
 /* Header */
@@ -60,6 +61,74 @@ header p {
     color: #333;
 }
 
+/* Responsif untuk Tablet */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.2em; /* Ukuran font lebih kecil di tablet */
+    }
+
+    header p {
+        font-size: 1.1em; /* Ukuran font sedikit lebih kecil */
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0 15px; /* Mengurangi margin pada tablet */
+    }
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Ukuran font lebih kecil pada mobile */
+    }
+
+    header p {
+        font-size: 0.9em; /* Ukuran font lebih kecil pada mobile */
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Margin yang lebih besar pada mobile */
+    }
+}
+
+/* Responsif untuk Layar Kecil (Smartphone) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px; /* Padding lebih kecil pada smartphone */
+    }
+
+    header h1 {
+        font-size: 1.6em; /* Ukuran font lebih kecil pada smartphone */
+    }
+
+    header p {
+        font-size: 0.8em; /* Ukuran font lebih kecil pada smartphone */
+    }
+
+    nav ul li {
+        margin: 8px 0; /* Margin lebih kecil pada smartphone */
+    }
+
+    .logo {
+        width: 90%; /* Logo lebih kecil pada smartphone */
+        max-width: 300px; /* Ukuran maksimum logo pada smartphone */
+    }
+}
+
+/* Navigasi */
 nav ul {
     list-style: none;
     display: flex;
@@ -138,65 +207,4 @@ a {
 
 a:hover {
     color: #32cd32; /* Hijau lime saat hover */
-}
-
-/* Responsif untuk Tablet */
-@media (max-width: 1024px) {
-    header h1 {
-        font-size: 2.5em;
-    }
-
-    section {
-        padding: 25px;
-        margin: 25px auto;
-    }
-}
-
-/* Responsif untuk Mobile */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    header p {
-        font-size: 1em;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    section {
-        padding: 20px;
-        margin: 20px 15px;
-    }
-
-    section h2 {
-        font-size: 1.5em;
-    }
-}
-
-/* Responsif untuk Layar Kecil (Smartphone) */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    nav ul {
-        padding: 0;
-    }
-
-    section {
-        padding: 15px;
-        margin: 15px 10px;
-        box-shadow: none; /* Mengurangi shadow agar terlihat lebih bersih */
-    }
-
-    footer {
-        font-size: 0.9em;
-    }
 }
