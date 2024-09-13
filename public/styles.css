@@ -10,7 +10,7 @@
 
 /* Warna dasar */
 body {
-    background-color: #fffbea; /* Warna latar belakang light yellow yang sangat lembut */
+    background-color: #fffef0; /* Latar belakang light yellow yang sangat lembut */
     color: #333;
     line-height: 1.8;
     font-size: 16px;
@@ -26,11 +26,11 @@ body {
 
 /* Header */
 header {
-    background-color: #fffacd; /* Light yellow */
-    color: #333;
+    background-color: lightyellow; /* Warna light yellow */
+    color: #fff;
     padding: 20px;
     text-align: center;
-    border-bottom: 5px solid #d4af37; /* Garis bawah gold */
+    border-bottom: 5px solid #228b22; /* Garis bawah hijau tua */
 }
 
 header h1 {
@@ -43,13 +43,13 @@ header h1 {
 
 header .line-1 {
     font-size: 1.5em;
-    color: #b8860b; /* Warna gold yang cocok dengan tema */
+    color: #009b4c; /* Warna hijau sesuai logo */
     letter-spacing: 1px;
 }
 
 header .line-2 {
     font-size: 1em;
-    color: #8b7765; /* Warna abu-abu kecoklatan */
+    color: #1d1819; /* Warna abu-abu muda */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -81,7 +81,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: rgba(255, 248, 220, 0.7); /* Efek hover dengan warna light yellow transparan */
+    background: rgba(255, 248, 210, 0.3); /* Efek hover dengan warna light yellow transparan */
     border-radius: 5px;
 }
 
@@ -90,7 +90,7 @@ section {
     padding: 30px;
     margin: 30px auto;
     max-width: 900px;
-    background-color: #f9f5e6; /* Warna light yellow yang lebih lembut */
+    background-color: #f9f8e6; /* Warna light yellow yang lebih lembut */
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan halus */
     transition: transform 0.3s;
@@ -101,10 +101,10 @@ section:hover {
 }
 
 section h2 {
-    color: #b8860b; /* Gold untuk heading */
+    color: #228b22; /* Warna hijau tua untuk heading */
     margin-bottom: 20px;
     font-size: 1.8em;
-    border-bottom: 3px solid #d4af37;
+    border-bottom: 3px solid #32cd32; /* Warna hijau muda */
     padding-bottom: 10px;
 }
 
@@ -119,7 +119,7 @@ ul li {
 
 /* Footer */
 footer {
-    background-color: #b8860b; /* Warna gold */
+    background-color: #228b22; /* Hijau tua */
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -131,13 +131,13 @@ footer p {
 }
 
 a {
-    color: #8b7765;
+    color: #006400;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #b8860b; /* Gold saat hover */
+    color: #32cd32; /* Hijau lime saat hover */
 }
 
 /* Responsif untuk Tablet */
