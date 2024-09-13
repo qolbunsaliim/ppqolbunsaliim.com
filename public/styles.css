@@ -115,7 +115,7 @@ header p {
     }
 
     header p {
-        font-size: 0.8em; /* Ukuran font lebih kecil pada smartphone */
+        font-size: 1em; /* Ukuran font lebih kecil pada smartphone */
     }
 
     nav ul li {
