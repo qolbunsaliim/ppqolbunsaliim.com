@@ -34,10 +34,24 @@ header {
 }
 
 header h1 {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font yang bersih */
+    font-weight: 600;
+    text-align: center;
+    margin: 10px 0;
+    line-height: 1.2; /* Mengatur jarak antar baris */
+}
+
+header .line-1 {
     font-size: 2.5em;
-    margin-bottom: 5px;
+    color: #00A859; /* Warna hijau sesuai logo */
+    letter-spacing: 1px;
+}
+
+header .line-2 {
+    font-size: 1.5em;
+    color: #3f3f3f; /* Warna abu-abu muda */
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 header p {
