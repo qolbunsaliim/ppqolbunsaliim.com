@@ -1,56 +1,50 @@
-/* styles.css */
-
-/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Font modern dan bersih */
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Warna dasar */
 body {
-    background-color: #fffef0; /* Latar belakang light yellow yang sangat lembut */
+    background-color: #fffef0;
     color: #333;
     line-height: 1.8;
     font-size: 16px;
 }
 
-/* Tambahkan styling untuk logo */
 .logo {
-    width: 80%; /* Menggunakan persentase agar lebih fleksibel */
-    max-width: 400px; /* Sesuaikan ukuran maksimal logo */
-    height: auto; /* Pertahankan rasio logo */
+    width: 80%;
+    max-width: 400px;
+    height: auto;
     display: block;
-    margin: 0 auto 10px; /* Posisikan logo di tengah dan beri jarak */
+    margin: 0 auto 10px;
 }
 
-/* Header */
 header {
-    background-color: lightyellow; /* Warna light yellow */
+    background-color: lightyellow;
     color: #fff;
     padding: 20px;
     text-align: center;
-    border-bottom: 5px solid #228b22; /* Garis bawah hijau tua */
+    border-bottom: 5px solid #228b22;
 }
 
 header h1 {
-    font-family: 'Poppins', sans-serif; /* Menggunakan font yang bersih */
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     text-align: center;
     margin: 10px 0;
-    line-height: 1.2; /* Mengatur jarak antar baris */
+    line-height: 1.2;
 }
 
 header .line-1 {
     font-size: 1.5em;
-    color: #009b4c; /* Warna hijau sesuai logo */
+    color: #009b4c;
     letter-spacing: 1px;
 }
 
 header .line-2 {
     font-size: 1em;
-    color: #1d1819; /* Warna abu-abu muda */
+    color: #1d1819;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -61,14 +55,13 @@ header p {
     color: #333;
 }
 
-/* Responsif untuk Tablet */
 @media (max-width: 1024px) {
     header h1 {
-        font-size: 2.2em; /* Ukuran font lebih kecil di tablet */
+        font-size: 2.2em;
     }
 
     header p {
-        font-size: 1.1em; /* Ukuran font sedikit lebih kecil */
+        font-size: 1.1em;
     }
 
     nav ul {
@@ -76,22 +69,21 @@ header p {
     }
 
     nav ul li {
-        margin: 0 15px; /* Mengurangi margin pada tablet */
+        margin: 0 15px;
     }
 }
 
-/* Responsif untuk Mobile */
 @media (max-width: 768px) {
     header {
         padding: 15px;
     }
 
     header h1 {
-        font-size: 1.8em; /* Ukuran font lebih kecil pada mobile */
+        font-size: 1.8em;
     }
 
     header p {
-        font-size: 0.9em; /* Ukuran font lebih kecil pada mobile */
+        font-size: 0.9em;
     }
 
     nav ul {
@@ -100,41 +92,39 @@ header p {
     }
 
     nav ul li {
-        margin: 10px 0; /* Margin yang lebih besar pada mobile */
+        margin: 10px 0;
     }
 }
 
-/* Responsif untuk Layar Kecil (Smartphone) */
 @media (max-width: 480px) {
     header {
-        padding: 10px; /* Padding lebih kecil pada smartphone */
+        padding: 10px;
     }
 
     header h1 {
-        font-size: 1.2em; /* Ukuran font lebih kecil pada smartphone */
+        font-size: 1.2em;
     }
 
     header p {
-        font-size: 1em; /* Ukuran font lebih kecil pada smartphone */
+        font-size: 1em;
     }
 
     nav ul li {
-        margin: 8px 0; /* Margin lebih kecil pada smartphone */
+        margin: 8px 0;
     }
 
     .logo {
-        width: 90%; /* Logo lebih kecil pada smartphone */
-        max-width: 250px; /* Ukuran maksimum logo pada smartphone */
+        width: 90%;
+        max-width: 250px;
     }
 }
 
-/* Navigasi */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     margin-top: 15px;
-    flex-wrap: wrap; /* Responsif: memungkinkan ul bergulung */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -150,30 +140,29 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: rgba(255, 248, 210, 0.3); /* Efek hover dengan warna light yellow transparan */
+    background: rgba(255, 248, 210, 0.3);
     border-radius: 5px;
 }
 
-/* Section */
 section {
     padding: 30px;
     margin: 30px auto;
     max-width: 900px;
-    background-color: #f9f8e6; /* Warna light yellow yang lebih lembut */
+    background-color: #f9f8e6;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
 section:hover {
-    transform: scale(1.02); /* Efek hover sedikit membesar */
+    transform: scale(1.02);
 }
 
 section h2 {
-    color: #228b22; /* Warna hijau tua untuk heading */
+    color: #228b22;
     margin-bottom: 20px;
     font-size: 1.8em;
-    border-bottom: 3px solid #32cd32; /* Warna hijau muda */
+    border-bottom: 3px solid #32cd32;
     padding-bottom: 10px;
 }
 
@@ -186,9 +175,8 @@ ul li {
     margin-bottom: 10px;
 }
 
-/* Footer */
 footer {
-    background-color: #228b22; /* Hijau tua */
+    background-color: #228b22;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -206,5 +194,5 @@ a {
 }
 
 a:hover {
-    color: #32cd32; /* Hijau lime saat hover */
+    color: #32cd32;
 }
