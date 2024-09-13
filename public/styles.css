@@ -111,7 +111,7 @@ header p {
     }
 
     header h1 {
-        font-size: 1.6em; /* Ukuran font lebih kecil pada smartphone */
+        font-size: 1.2em; /* Ukuran font lebih kecil pada smartphone */
     }
 
     header p {
@@ -124,7 +124,7 @@ header p {
 
     .logo {
         width: 90%; /* Logo lebih kecil pada smartphone */
-        max-width: 300px; /* Ukuran maksimum logo pada smartphone */
+        max-width: 250px; /* Ukuran maksimum logo pada smartphone */
     }
 }
 
