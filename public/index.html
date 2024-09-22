@@ -20,46 +20,10 @@
         </h1>
         <p>Mulia Bersama Al Quran</p>
         <nav>
-            <ul>
-                <li><a href="#profil">Profil</a></li>
-                <li><a href="#visi-misi">Visi & Misi</a></li>
-                <li><a href="#pendidikan">Unit Pendidikan</a></li>
-                <li><a href="#kesantrian">Kesantrian</a></li>
-                <li><a href="#jariyah">Amal Jariyah</a></li>
-                <li><a href="#kontak">Kontak</a></li>
+            <ul id="menu">
             </ul>
         </nav>
     </header>
-
-    <!-- Profil Ponpes -->
-    <section id="profil">
-        ...
-    </section>
-
-    <!-- Visi & Misi -->
-    <section id="visi-misi">
-        ...
-    </section>
-
-    <!-- Unit Pendidikan -->
-    <section id="pendidikan">
-        ...
-    </section>
-
-    <!-- Kesantrian -->
-    <section id="kesantrian">
-        ...
-    </section>
-
-    <!-- Amal Jariyah -->
-    <section id="jariyah">
-        ...
-    </section>
-
-    <!-- Kontak -->
-    <section id="kontak">
-        ...
-    </section>
 
     <!-- Footer -->
     <footer>
@@ -68,8 +32,8 @@
 
     
     <script>
-        let file = "https://public-api.wordpress.com/rest/v1.1/sites/237003818/posts?type=page"
-        fetch(file)
+        const source = "https://public-api.wordpress.com/rest/v1.1/sites/237003818/posts?type=page&fields=ID,slug,title,content,menu_order&parent_id=55";
+        fetch(source)
             .then(response => {
                 if (response.ok) {
                     return response.text();
@@ -77,25 +41,24 @@
             })
             .then(text => {
                 const data = JSON.parse(text);
-                console.log(data);
+                const posts = data.posts.toSorted((a, b) => a.menu_order - b.menu_order);
+                console.log(posts);
 
-                const profil_ponpes = data.posts.find(d => d.slug == "profil-ponpes");
-                document.getElementById("profil").innerHTML = profil_ponpes.content;
+                for (const post of posts) {
+                    const a = document.createElement("a");
+                    a.href = "#" + post.slug;
+                    a.innerHTML = post.title;
+                    const li = document.createElement("li");
+                    li.appendChild(a);
 
-                const visi_misi = data.posts.find(d => d.slug == "visi-misi");
-                document.getElementById("visi-misi").innerHTML = visi_misi.content;
+                    document.getElementById("menu").appendChild(li);
 
-                const pendidikan = data.posts.find(d => d.slug == "pendidikan");
-                document.getElementById("pendidikan").innerHTML = pendidikan.content;
+                    const section = document.createElement("section");
+                    section.setAttribute('id', post.slug);
+                    section.innerHTML = post.content;
 
-                const kesantrian = data.posts.find(d => d.slug == "kesantrian");
-                document.getElementById("kesantrian").innerHTML = kesantrian.content;
-
-                const amal_jariyah = data.posts.find(d => d.slug == "amal-jariyah");
-                document.getElementById("jariyah").innerHTML = amal_jariyah.content;
-
-                const kontak = data.posts.find(d => d.slug == "kontak");
-                document.getElementById("kontak").innerHTML = kontak.content;
+                    document.querySelector("body").insertBefore(section, document.querySelector("footer"));
+                }
             });
     </script>
 
