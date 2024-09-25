@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -28,6 +30,64 @@
     <footer>
         <p>&copy; 2024 PPTQ Qolbun Saliim Muhammadiyah Kenokorejo</p>
     </footer>
-    
+
+    <script>
+        const source_menu = "https://public-api.wordpress.com/rest/v1.1/sites/237003818/posts?type=page&fields=ID,slug,title,menu_order&parent_id=55";
+        fetch(source_menu)
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                }
+            })
+            .then(text => {
+                const data = JSON.parse(text);
+                const posts = data.posts.toSorted((a, b) => a.menu_order - b.menu_order);
+
+                for (const post of posts) {
+                    const a = document.createElement("a");
+                    a.href = post.slug;
+                    a.innerHTML = post.title;
+                    const li = document.createElement("li");
+                    li.appendChild(a);
+
+                    document.getElementById("menu").appendChild(li);
+                }
+            });
+
+        let PATH_SEGMENTS_TO_SKIP = 0;
+
+        const loc = window.location;
+
+        const slug = loc.pathname.split("/")[
+            PATH_SEGMENTS_TO_SKIP + 1
+        ];
+
+        const homepage = loc.origin;
+
+        try {
+            console.log(slug);
+            const source = "https://public-api.wordpress.com/rest/v1.1/sites/237003818/posts/slug:" + slug + "?fields=ID,slug,title,content,date";
+            fetch(source)
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                })
+                .then(text => {
+                    const data = JSON.parse(text);
+                    console.log(data);
+
+                    const section = document.createElement("section");
+                    section.setAttribute('id', data.slug);
+                    section.innerHTML = data.content;
+
+                    document.querySelector("body").insertBefore(section, document.querySelector("footer"));
+                });
+        } catch (e) {
+            console.log(homepage);
+        }
+
+    </script>
 </body>
+
 </html>
