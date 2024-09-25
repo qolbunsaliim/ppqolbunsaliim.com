@@ -43,8 +43,8 @@
 
     
     <script>
-        const source = "https://public-api.wordpress.com/rest/v1.1/sites/237003818/posts?type=page&fields=ID,slug,title,content,menu_order&parent_id=55";
-        fetch(source)
+        const source_menu = "https://public-api.wordpress.com/rest/v1.1/sites/237003818/posts?type=page&fields=ID,slug,title,menu_order&parent_id=55";
+        fetch(source_menu)
             .then(response => {
                 if (response.ok) {
                     return response.text();
@@ -53,23 +53,33 @@
             .then(text => {
                 const data = JSON.parse(text);
                 const posts = data.posts.toSorted((a, b) => a.menu_order - b.menu_order);
-                console.log(posts);
 
                 for (const post of posts) {
                     const a = document.createElement("a");
-                    a.href = "#" + post.slug;
+                    a.href = post.slug;
                     a.innerHTML = post.title;
                     const li = document.createElement("li");
                     li.appendChild(a);
 
                     document.getElementById("menu").appendChild(li);
-
-                    const section = document.createElement("section");
-                    section.setAttribute('id', post.slug);
-                    section.innerHTML = post.content;
-
-                    document.querySelector("body").insertBefore(section, document.querySelector("footer"));
                 }
+            });
+
+        const source = "https://public-api.wordpress.com/rest/v1.1/sites/237003818/posts/55?type=page&fields=ID,slug,title,content";
+        fetch(source)
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                }
+            })
+            .then(text => {
+                const post = JSON.parse(text);
+
+                const section = document.createElement("section");
+                section.setAttribute('id', post.slug);
+                section.innerHTML = post.content;
+
+                document.querySelector("body").insertBefore(section, document.querySelector("footer"));
             });
     </script>
 
