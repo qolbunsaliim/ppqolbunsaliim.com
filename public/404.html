@@ -65,17 +65,17 @@
         const homepage = loc.origin;
 
         try {
-            console.log(slug);
             const source = "https://public-api.wordpress.com/rest/v1.1/sites/237003818/posts/slug:" + slug + "?fields=ID,slug,title,content,date";
             fetch(source)
                 .then(response => {
                     if (response.ok) {
                         return response.text();
+                    } else {
+                        location.replace(homepage);
                     }
                 })
                 .then(text => {
                     const data = JSON.parse(text);
-                    console.log(data);
 
                     const section = document.createElement("section");
                     section.setAttribute('id', data.slug);
@@ -84,7 +84,7 @@
                     document.querySelector("body").insertBefore(section, document.querySelector("footer"));
                 });
         } catch (e) {
-            console.log(homepage);
+            location.replace(homepage);
         }
 
     </script>
